@@ -3,6 +3,7 @@ package modelo;
 
 import java.io.Serializable;
 import java.util.Date;
+import javax.swing.ImageIcon;
 
 //Clase para construir y manejar los Contactos
 public class Contacto implements Serializable{
@@ -14,6 +15,7 @@ public class Contacto implements Serializable{
         private String telefono;
         private Date fechaNacimiento;
         private Tipo tipo;
+        private ImageIcon foto;
 
     public String getApellido1() {
         return apellido1;
@@ -47,6 +49,14 @@ public class Contacto implements Serializable{
         this.telefono = telefono;
     }
 
+    public ImageIcon getFoto() {
+        return foto;
+    }
+
+    public void setFoto(ImageIcon foto) {
+        this.foto = foto;
+    }
+
     public Date getFechaNacimiento() {
         return fechaNacimiento;
     }
@@ -78,7 +88,7 @@ public class Contacto implements Serializable{
     public Contacto() {
     }
 
-    public Contacto(String nombre, String apellido1, String apellido2, String dni, String telefono, Date fechaNacimiento, Tipo tipo) {
+    public Contacto(String nombre, String apellido1, String apellido2, String dni, String telefono, Date fechaNacimiento, Tipo tipo, ImageIcon foto) {
         this.nombre = nombre;
         this.apellido1 = apellido1;
         this.apellido2 = apellido2;
@@ -86,6 +96,7 @@ public class Contacto implements Serializable{
         this.telefono = telefono;
         this.fechaNacimiento = fechaNacimiento;
         this.tipo = tipo;
+        this.foto = foto;
     }
 
     @Override
