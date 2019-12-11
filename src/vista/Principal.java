@@ -1,5 +1,7 @@
 package vista;
 
+import java.awt.Image;
+import java.awt.image.BufferedImage;
 import java.io.EOFException;
 import java.io.File;
 import java.io.FileInputStream;
@@ -705,6 +707,7 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        lblFoto.setBackground(new java.awt.Color(65, 65, 65));
         lblFoto.setText("jLabel3");
 
         btnCargarFoto.setText("Foto");
@@ -1060,6 +1063,11 @@ public class Principal extends javax.swing.JFrame {
         fcBucar.showOpenDialog(null);
         fichero = fcBucar.getSelectedFile();
         ImageIcon foto = new ImageIcon(fichero.toString());
+        
+        BufferedImage redimensionador = new BufferedImage(65, 65, Image.SCALE_DEFAULT);
+        
+        
+        
         lblFoto.setIcon(foto);
         
     }//GEN-LAST:event_btnCargarFotoActionPerformed
