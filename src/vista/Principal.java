@@ -26,7 +26,6 @@ public class Principal extends javax.swing.JFrame {
     
     
     
-    List<Contacto> agenda = new ArrayList();
     //contado para saber en que posicion del arraylist me encuentro.
     public static int posicionActual = 0;
     //combobox para el enum Tipo
@@ -46,18 +45,6 @@ public class Principal extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         //modelo del combobox
         cmbTipo.setModel(tipos);
-
-        Contacto p0 = new Contacto("Eva", "Rey", "Varela", "71665576Z", "985118525", new Date(86, 11, 23), Tipo.enemigo,new ImageIcon("./Fotos/Lisa.Jpg"));
-        Contacto p1 = new Contacto("Claudia", "Perez", "Andrade", "76438431R", "985118525", new Date(91, 4, 19), Tipo.amigo,new ImageIcon("./Fotos/Bart.Jpg"));
-        Contacto p2 = new Contacto("Juan", "Rodriguez", "Menendez", "10535241E", "985118789", new Date(84, 5, 19), Tipo.trabajo,new ImageIcon("./Fotos/Homer.Jpg"));
-        Contacto p3 = new Contacto("Alberto", "Lopez", "Mendez", "52930684W", "985118525", new Date(76, 8, 6), Tipo.familiar,new ImageIcon("./Fotos/Marge.Jpg"));
-        Contacto p4 = new Contacto("juale", "es", "monger", "54130146Z", "985118525", new Date(76, 8, 6), Tipo.familiar,new ImageIcon("./Fotos/Maggie.Jpg"));
-
-        agenda.add(p0);
-        agenda.add(p1);
-        agenda.add(p2);
-        agenda.add(p3);
-        agenda.add(p4);
 
         //añado los tipos al combobox
         tipos.addElement(Tipo.amigo);
@@ -971,18 +958,7 @@ public class Principal extends javax.swing.JFrame {
     //funcion para buscar por DNI
     private void btnBuscarDNIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarDNIActionPerformed
 
-        String dniABuscar = txtBuscaDNI.getText();
-
-        for (Contacto b : agenda) {
-            //recorro la agenda buscando ese dni
-            if (dniABuscar.equals(b.getDni())) {
-                
-                //muestro el contacto
-                actualizaCampos(agenda.lastIndexOf(b));
-                posicionActual = agenda.lastIndexOf(b);
-            }
-
-        }
+        
 
 
     }//GEN-LAST:event_btnBuscarDNIActionPerformed
